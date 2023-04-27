@@ -39,7 +39,7 @@ node index.js
 ```
 
 ## How to use from client side
-Once your server is running, you can make a POST request to http://localhost:3000/create-live-stream to create a new live stream. The server will return a JSON response containing the stream key and playback ID for the newly created live stream.
+Once your server is running, you can make a POST request to http://localhost:8000/create-live-stream to create a new live stream. The server will return a JSON response containing the stream key and playback ID for the newly created live stream.
 
 You can temporarily try it on bash like below. You can get stream key and playback ID on your console.
 
