@@ -1,6 +1,7 @@
 import Mux from "@mux/mux-node";
 import dotenv from "dotenv";
 import express from "express";
+import cors from "cors";
 dotenv.config();
 
 const app = express();
@@ -8,6 +9,14 @@ const app = express();
 const { Video } = new Mux(
   process.env.MUX_TOKEN_ID,
   process.env.MUX_TOKEN_SECRET
+);
+
+// Use the cors middleware to allow cross-origin requests.
+// This is because there is no CORS header on the Mux API responses.
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https:/localhost:3000"],
+  })
 );
 
 app.post("/create-live-stream", async (req, res) => {
